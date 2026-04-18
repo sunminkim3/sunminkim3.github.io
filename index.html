@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Portfolio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="hero" aria-label="Portfolio showcase">
+      <div class="hero__backdrop" aria-hidden="true">
+        <div class="backdrop__halo backdrop__halo--blue"></div>
+        <div class="backdrop__halo backdrop__halo--peach"></div>
+        <div class="backdrop__portrait"></div>
+        <div class="backdrop__grain"></div>
+      </div>
+
+      <section class="floating-board" aria-live="polite">
+        <div id="floating-items" class="floating-items"></div>
+      </section>
+
+      <nav class="dock" aria-label="Quick navigation">
+        <div class="dock__frame">
+          <a href="#" class="dock__item" aria-label="Photos">
+            <span class="dock__thumb dock__thumb--photos">
+              <span class="dock__glyph dock__glyph--flower"></span>
+            </span>
+          </a>
+          <a href="#" class="dock__item" aria-label="Notes" data-dock-action="notes">
+            <span class="dock__thumb dock__thumb--notes">
+              <span class="dock__glyph dock__glyph--notes"></span>
+            </span>
+          </a>
+          <a href="#" class="dock__item" aria-label="Instagram">
+            <span class="dock__thumb dock__thumb--instagram">
+              <span class="dock__glyph dock__glyph--instagram"></span>
+            </span>
+          </a>
+          <a href="#" class="dock__item" aria-label="Mail">
+            <span class="dock__thumb dock__thumb--mail">
+              <span class="dock__glyph dock__glyph--mail"></span>
+            </span>
+          </a>
+          <a href="#" class="dock__item" aria-label="Trash">
+            <span class="dock__thumb dock__thumb--trash">
+              <span class="dock__glyph dock__glyph--trash"></span>
+            </span>
+          </a>
+        </div>
+      </nav>
+
+      <section class="project-modal" aria-label="Project windows"></section>
+    </main>
+
+    <template id="project-card-template">
+      <article class="project-card">
+        <div class="project-card__image">
+          <img class="project-card__media" alt="" />
+        </div>
+        <p class="project-card__label"></p>
+      </article>
+    </template>
+
+    <template id="project-window-template">
+      <article
+        class="project-window"
+        role="dialog"
+        aria-modal="false"
+      >
+        <header class="project-window__titlebar">
+          <div class="project-window__traffic">
+            <button type="button" class="traffic-btn traffic-btn--close" aria-label="Close window"></button>
+            <span class="traffic-btn traffic-btn--minimize" aria-hidden="true"></span>
+            <span class="traffic-btn traffic-btn--maximize" aria-hidden="true"></span>
+          </div>
+          <p class="project-window__title">Project Window</p>
+        </header>
+
+        <div class="project-window__body">
+          <aside class="project-window__sidebar">
+            <div class="sidebar-thumb">
+              <img class="sidebar-thumb__image" alt="" />
+            </div>
+            <div class="sidebar-meta">
+              <p class="sidebar-meta__label">Selected File</p>
+              <h2 class="sidebar-meta__name"></h2>
+              <p class="sidebar-meta__sub">Portfolio Preview</p>
+            </div>
+          </aside>
+
+          <div class="project-window__content">
+            <section class="window-section">
+              <p class="window-section__heading">Overview</p>
+              <p class="window-copy">
+                This project snapshot is currently using dummy content. The
+                layout is designed to feel like a Finder preview window while
+                we wait for final portfolio copy.
+              </p>
+              <p class="window-copy">
+                The selected image is treated as the hero asset, with room for
+                your concept note, role summary, and a short description of
+                the visual direction.
+              </p>
+            </section>
+
+            <section class="window-section">
+              <p class="window-section__heading">Details</p>
+              <ul class="window-list">
+                <li class="window-list__item">
+                  <span class="window-list__label">Type</span>
+                  <span class="window-list__value">Dummy Visual Project</span>
+                </li>
+                <li class="window-list__item">
+                  <span class="window-list__label">Category</span>
+                  <span class="window-list__value">Art Direction / Image</span>
+                </li>
+                <li class="window-list__item">
+                  <span class="window-list__label">Status</span>
+                  <span class="window-list__value">Placeholder Content</span>
+                </li>
+              </ul>
+            </section>
+
+            <section class="window-section">
+              <p class="window-section__heading">Preview</p>
+              <div class="window-preview">
+                <img class="window-preview__image" alt="" />
+              </div>
+            </section>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
