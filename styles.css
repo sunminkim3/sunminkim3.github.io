@@ -588,11 +588,17 @@ body {
 
 @media (max-width: 640px) {
   body {
-    overflow-y: auto;
+    overflow: hidden;
   }
 
   .hero {
     min-height: 100svh;
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero__backdrop {
+    position: fixed;
+    inset: 0;
   }
 
   .floating-board,
@@ -601,8 +607,10 @@ body {
   }
 
   .backdrop__portrait {
-    inset: -12%;
-    filter: blur(28px) saturate(0.9) brightness(1.06);
+    inset: 0;
+    background-position: center top;
+    filter: blur(18px) saturate(0.92) brightness(1.04);
+    transform: scale(1.08);
   }
 
   .project-card {
@@ -614,13 +622,20 @@ body {
   }
 
   .dock {
-    bottom: 1.4rem;
+    position: fixed;
+    left: 50%;
+    right: auto;
+    bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    width: max-content;
+    max-width: calc(100vw - 1rem);
+    transform: translateX(-50%);
   }
 
   .dock__frame {
     gap: 0.45rem;
     padding: 0.45rem 0.55rem;
     border-radius: 0.9rem;
+    max-width: 100%;
   }
 
   .dock__item {
