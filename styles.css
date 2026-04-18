@@ -63,7 +63,7 @@ body {
   inset: -8%;
   background:
     linear-gradient(180deg, rgba(251, 247, 242, 0.2), rgba(231, 221, 212, 0.24)),
-    url("./image/배경화면/downloaded_image.jpeg") center center / cover no-repeat;
+    url("./image/background/downloaded_image.jpeg") center center / cover no-repeat;
   filter: blur(34px) saturate(0.9) brightness(1.06);
   opacity: 0.9;
   transform: scale(1.12);

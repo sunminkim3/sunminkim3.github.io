@@ -1,19 +1,19 @@
 const projects = [
-  "겹침Artboard 3.png",
-  "겹침Artboard 2.png",
-  "생일초.jpg",
+  "layer-artboard-3.png",
+  "layer-artboard-2.png",
+  "birthday-candle.jpg",
   "IMG_3414.JPG",
-  "패턴Artboard 12.png",
-  "스티커 빨간원.jpg",
-  "집Artboard 3.png",
-  "원Artboard 4.png",
-  "집Artboard 2.png"
+  "winter-pattern-artboard-12.png",
+  "red-sticker-circle.jpg",
+  "home-artboard-3.png",
+  "circle-artboard-4.png",
+  "home-artboard-2.png"
 ].map((filename) => ({
   filename,
   src: `./image/${encodeURIComponent(filename)}`,
   isArtboard: filename.includes("Artboard"),
   title:
-    filename.replace(/\.[^.]+$/, "") === "패턴Artboard 12"
+    filename.replace(/\.[^.]+$/, "") === "winter-pattern-artboard-12"
       ? "겨울 패턴"
       : filename.replace(/\.[^.]+$/, "")
 }));
